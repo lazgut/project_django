@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+
 import os
 import sys
 from pathlib import Path
@@ -32,6 +33,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import django
+django.setup()
+
+from apps.publish.models import Post
+
+
 
 # Application definition
 
@@ -42,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
     'publish',
-    'publish.models.Post',
+    'publish.models',
+    'main',
 ]
 
 MIDDLEWARE = [
