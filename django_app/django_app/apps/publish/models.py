@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 
 
 class Post(models.Model):
-    author = models.ForeignKey(get_user_model(), on_delete=models.DO_NOTHING,)
+    author = models.ForeignKey('settings.AUTH_USER_MODEL', on_delete=models.DO_NOTHING,)
     created = models.DateTimeField('Created Date', default=timezone.now)
     title = models.CharField('Title', max_length=200)
     content = models.TextField('Content')

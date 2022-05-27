@@ -31,13 +31,7 @@ SECRET_KEY = 'django-insecure-6d@&(1bhqr11(9cvt8qk(#+quxo$1hh8e)5(xpw9)yjaj#2kmw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-import django
-django.setup()
-
-from apps.publish.models import Post
-
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'publish.models.Post',
     'publish',
-    'publish.models',
     'main',
 ]
 
